@@ -146,7 +146,7 @@ ssh -i ~/.ssh/id_ed25519_key1 ec2-user@<EC2-PUBLIC-IP>
 
 :camera: Screenshot
 
-![Insert successful SSH Key 1 connection]()
+![Insert successful SSH Key 1 connection](Key1.png)
 
 ---
 
@@ -162,9 +162,7 @@ ssh -i ~/.ssh/id_ed25519_key2 ec2-user@<EC2-PUBLIC-IP>
 
 :camera: Screenshot
 
-```
-Insert successful SSH Key 2 connection
-```
+![Insert successful SSH Key 2 connection](key2.png)
 
 ---
 
@@ -202,9 +200,7 @@ sudo systemctl status sshd
 
 :camera: Screenshot
 
-```
-Insert OpenSSH installation screenshot
-```
+![Insert OpenSSH installation screenshot](ssh-my-server.png)
 
 ---
 
@@ -242,9 +238,7 @@ sudo systemctl status fail2ban
 
 :camera: Screenshot
 
-```
-Insert Fail2Ban running screenshot
-```
+![Insert Fail2Ban running screenshot](fail2ban.png)
 
 ---
 
@@ -265,22 +259,6 @@ ssh -i ~/.ssh/id_ed25519_key2 ec2-user@<EC2-PUBLIC-IP>
 ```
 
 Both logins were successful.
-
----
-
-# :file_folder: Project Structure
-
-```
-ssh-remote-server-setup/
-│
-├── README.md
-├── screenshots/
-│   ├── ec2-instance.png
-│   ├── ssh-key1-success.png
-│   ├── ssh-key2-success.png
-│   ├── openssh-installed.png
-│   └── fail2ban-running.png
-```
 
 ---
 
