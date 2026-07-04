@@ -87,13 +87,13 @@ Generated two SSH key pairs locally using macOS Terminal.
 ### SSH Key 1
 
 ```bash
-ssh-keygen -t ed25519 -C "ssh-key1"
+ssh-keygen -t ed25519 -C "ssh-key-1" -f ~/.ssh/aws-key1 -N ""
 ```
 
 ### SSH Key 2
 
 ```bash
-ssh-keygen -t ed25519 -C "ssh-key2"
+ssh-keygen -t ed25519 -C "ssh-key-2" -f ~/.ssh/aws-key2 -N ""
 ```
 
 Both keys were stored inside:
@@ -177,25 +177,26 @@ sudo dnf update -y
 Installed OpenSSH Server.
 
 ```bash
-sudo dnf install openssh-server -y
+nano ~/.ssh/config
 ```
 
 Enabled SSH.
 
 ```bash
-sudo systemctl enable sshd
+
+Host my-server
+
+HostName YOUR-PUBLIC-IP
+
+User ec2-user
+
+IdentityFile ~/.ssh/aws-key1
 ```
 
-Started SSH.
+Connect with alias
 
 ```bash
-sudo systemctl start sshd
-```
-
-Checked service status.
-
-```bash
-sudo systemctl status sshd
+ssh my-server
 ```
 
 :camera: Screenshot
@@ -215,19 +216,13 @@ sudo dnf install epel-release -y
 Installed Fail2Ban.
 
 ```bash
-sudo dnf install fail2ban -y
+sudo dnf install -y fail2ban
 ```
 
 Enabled the service.
 
 ```bash
-sudo systemctl enable fail2ban
-```
-
-Started the service.
-
-```bash
-sudo systemctl start fail2ban
+sudo systemctl enable --now fail2ban
 ```
 
 Verified Fail2Ban status.
